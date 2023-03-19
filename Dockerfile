@@ -4,7 +4,7 @@ MAINTAINER isymbo<isymbo@gmail.com>
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
 ENV PASSWORD    password
-ENV METHOD      rc4-md5
+ENV METHOD      chacha20
 ENV TIMEOUT     300
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -14,7 +14,7 @@ RUN apt-get update -y && \
     pip install --upgrade pip && \
     rm -rf /var/lib/apt/lists/*
 RUN apt-get update -y
-RUN apt-get install -y libsodium-dev
+RUN apt-get install -y libsodium18
 RUN pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
