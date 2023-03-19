@@ -13,6 +13,7 @@ RUN apt-get update -y && \
     apt-get install -y python-pip git && \
     pip install --upgrade pip && \
     rm -rf /var/lib/apt/lists/*
+RUN apt-get install -y libsodium-dev
 RUN pip install git+https://github.com/shadowsocks/shadowsocks.git@master
 
 EXPOSE $SERVER_PORT/tcp $SERVER_PORT/udp
