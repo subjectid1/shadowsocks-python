@@ -4,7 +4,7 @@ MAINTAINER isymbo<isymbo@gmail.com>
 ENV SERVER_ADDR 0.0.0.0
 ENV SERVER_PORT 8388
 ENV PASSWORD    password
-ENV METHOD      aes-128-gcm
+ENV METHOD      rc4-md5
 ENV TIMEOUT     300
 
 ARG DEBIAN_FRONTEND=noninteractive
